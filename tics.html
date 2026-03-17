@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUB-2 / Diseño Digital</title>
+    <style>
+        :root {
+            /* Paleta de colores Tecnológica (Turquesa/Esmeralda) */
+            --primary-color: #00796b;
+            --secondary-color: #009688;
+            --bg-light: #e0f2f1;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .volver-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjetas de Contenido */
+        .content-card, .sidebar-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #004d40;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Destacado del Proyecto Actual */
+        .proyecto-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .proyecto-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Sección del Docente */
+        .teacher-info {
+            text-align: center;
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .materia-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .fecha {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="volver-btn">← Volver al Menú</a>
+        <h1>SUB-2 / Diseño Digital</h1>
+        <p>Plantel 22 - Grupo 606</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="content-card">
+            <h2>Propósito de la Materia</h2>
+            <p>Aprender y aplicar los fundamentos de la maquetación web y el diseño digital. Utilizando lenguajes de marcado como HTML, comprendemos la estructura, elementos y funcionamiento de una página web, integrando tablas, recursos multimedia y aplicando principios de jerarquía visual y psicología del color.</p>
+
+            <h2>Progresiones y Contenidos</h2>
+            
+            <ul>
+                <li><strong>Material: Notebook - Aprendiendo HTML</strong> <br> <span class="fecha">Publicado: 19 feb</span> <br> Conceptos teóricos esenciales para el desarrollo web. </li>
+                <li><strong>Act. 1 - Elementos de una página WEB</strong> <br> <span class="fecha">Publicado: 12 feb</span> <br> Organizador gráfico detallando las etiquetas y componentes básicos.</li>
+                <li><strong>Act. 2 - Mi primer página WEB (mibio)</strong> <br> <span class="fecha">Publicado: 2 mar</span> <br> Práctica inicial estructurando un perfil biográfico básico en HTML.</li>
+                <li><strong>Act. 3 - Segunda página WEB (mipasatiempo)</strong> <br> <span class="fecha">Publicado: 3 mar</span> <br> Integración de tablas y elementos multimedia, subido mediante GitHub.</li>
+            </ul>
+
+            <div class="proyecto-box">
+                <h3>💻 Problema Laboral – Sitio Web Escolar</h3>
+                <p><span class="fecha">Publicado: 4 mar</span></p>
+                <p><strong>Este portafolio es la evidencia de este proyecto.</strong> Consiste en programar un sitio web completo interconectando 6 páginas HTML. El reto es aplicar correctamente la paleta de colores, tipografía adecuada, lograr un equilibrio visual y entregar el código alojado en un repositorio de <strong>GitHub</strong> antes del examen parcial.</p>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card teacher-info">
+                <h2>Docente</h2>
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXNsLLK_1Pt2wMqXro72HxnOuHrTMjHp9ZjYh7h3vW3FuJYBu6kYcYL_ZJ20sxCUPrEBBE9hJAXkXWT_JV1NqWuhAnJBeew_ccSNv8ha0H9m8MmOwvQ8F8GTVHkCvf1c3umsfcvN35PNmK_bkVnIGJ4aUcquRSMBejDzEKiznIcpel2HNXK0yF0OC_18cUAldcExRR8VBixcmkgC_jN0Bajh4mpv7bQfpEqvvMyOD4cLWkx_mCwvoPO_ZOpfMeK9uzg8yhIceEXGrQAoE05-AZCcmlb2PDhbsuyPp9cQk66p0Lg-LZ3JCyTtyjOjgJJbMNqQl1KMNG3oUqAmooFw60k2eSlunCTJzMxLUG3AivfuU1voODGF9BuvmG2PEX2R_z-_NtxgMaiH1Fjyi3P7jMMW8HbXmWoLKQ7XFviT89L9EMutGy2PQpOdZxkUYm2P9KGzGNIBipWcFvtT1xWmVuOReamIHameNjs_Kj89Ej8GUvdxqbAJmblvlvvzl3vjpPCP9r3faecnG5cep9m3rlkizEW9mCDokfRDlc19hrV2x370ySHbBw0l7A4eFNGyWhrDaSiGfcMeS--K77TF42C39bYjPo7T0CYDbDG178kaCgXwjHovxrBdOPsUBXJo618OS1p4bt6FJFQQnF4YdK7YXbXMUrgjvz2cbhJyzTaNzxBkaqm6osz9zwkPueQZi7SW5Agc_3eHSKVi59MeDzubzBlXy1S7W4gFBZ9mHkKuOKecnS3JG5McL18Exh3RYPqsvChTkP5CrnYLLobqLpBHenS7KC9Dc3hVrfda_fZ840N4hsodXLwi4sKuEMKubYbreiylP6xpr1_BzTdtPdZEQrA6DGrGSGVrmrlVeRACSB5yo0EGwEff7Oei-InXj6bs78I0czQh9EDfLa5Hi0I-6iC9ucAHBc7gIj3aM-HCkur1iWNKU63n84bCfnadKJnzdkGaIBCRwADmSWHW2Lw2-gZO1GrbtyZcTQBn6KidI7K4KW4WESDFxdbNVJaKncYR5Of3HuvDBnpmDZDi4tewlwXiFIOQw1E3vsE3KLOzim6u_ykzw=s75-c" alt="Foto del Docente" class="teacher-img">
+                <h3 style="color: var(--text-dark); margin: 0;">Enrique Garcia de la Rosa</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Imparte: Submódulo 2 / Diseño Digital</p>
+            </div>
+
+            <div class="sidebar-card" style="margin-top: 2rem;">
+                <h2>Desarrollo Web</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Estructurando ideas a través de código y diseño.</p>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Código HTML" class="materia-img">
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Administración</title>
+    <style>
+        :root {
+            /* Paleta de colores Verde (Administración / Finanzas) */
+            --primary-color: #11998e;
+            --secondary-color: #38ef7d;
+            --bg-light: #e8f5e9;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .volver-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjetas de Contenido */
+        .content-card, .sidebar-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #00796b;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Sección del Proyecto PEC */
+        .pec-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .pec-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Alerta de Entrega */
+        .entrega-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .entrega-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        /* Sección del Docente */
+        .teacher-info {
+            text-align: center;
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .materia-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="volver-btn">← Volver al Menú</a>
+        <h1>Fundamentos de Administración</h1>
+        <p>Grupo 606</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="content-card">
+            <h2>Propósito de la Materia</h2>
+            <p>Comprender las bases de la administración y su aplicación práctica en el entorno organizacional. Analizar cómo se estructuran y dirigen las empresas para optimizar sus recursos y alcanzar sus objetivos de manera eficiente.</p>
+
+            <h2>Contenidos del Primer Parcial</h2>
+            
+            <h3>1. El Proceso Administrativo</h3>
+            <p>Estudio de las fases fundamentales para gestionar cualquier organización: Planeación, Organización, Dirección y Control. 
+
+[Image of the administrative process diagram]
+</p>
+
+            <h3>2. Tipos de Empresas</h3>
+            <p>Análisis comparativo de la administración aplicada a <strong>empresas privadas</strong> (enfocadas en rentabilidad y mercado) frente a las <strong>empresas públicas</strong> (enfocadas en servicios y bienestar social), y cómo estas diferencias afectan su estructura.</p>
+
+            <h3>3. Impacto en Nuestra Empresa</h3>
+            <p>Evaluación de cómo los principios administrativos moldean el funcionamiento, la toma de decisiones y el éxito de nuestro propio proyecto empresarial.</p>
+
+            <div class="pec-box">
+                <h3>📊 Proyecto: Planeación de la Propuesta Empresarial</h3>
+                <p>El objetivo de este trabajo es formalizar la planeación de nuestra propuesta empresarial, integrando un presupuesto claro que demuestre el uso eficiente de los recursos.</p>
+                <p><strong>El documento debe contener obligatoriamente:</strong></p>
+                <ul>
+                    <li><strong>Proyección de ventas:</strong> Estimación estructurada de los ingresos esperados.</li>
+                    <li><strong>Presupuesto:</strong> Asignación financiera para las operaciones de la empresa.</li>
+                    <li><strong>Análisis de costos:</strong> Evaluación detallada de los gastos fijos y variables.</li>
+                </ul>
+            </div>
+
+            <div class="entrega-box">
+                <h3>📌 Formato y Reglas de Entrega</h3>
+                <ul>
+                    <li><strong>Presentación:</strong> Formato totalmente digital.</li>
+                    <li><strong>Estructura:</strong> Debe incluir la <strong>portada institucional</strong>.</li>
+                    <li><strong>Puntualidad:</strong> Entrega estricta en el tiempo establecido (ver rúbrica anexa).</li>
+                    <li><strong>Importante:</strong> El trabajo lo sube <strong>un solo integrante</strong> por equipo a la plataforma; no es necesario que los demás lo suban.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card teacher-info">
+                <h2>Docente</h2>
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXM-dDLWriyj14QDWXuEF-rplRXtLw8vMrz4uTPLkO0kusEsHU=s75-c" alt="Foto de la Docente" class="teacher-img">
+                <h3 style="color: var(--text-dark); margin: 0;">Lucia Sanchez Garcia</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Imparte: Fundamentos de Administración</p>
+            </div>
+
+            <div class="sidebar-card" style="margin-top: 2rem;">
+                <h2>Planeación y Finanzas</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">El análisis financiero como base para la toma de decisiones empresariales.</p>
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gráficas y Presupuestos" class="materia-img">
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

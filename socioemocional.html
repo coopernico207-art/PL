@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formación Socioemocional</title>
+    <style>
+        :root {
+            /* Paleta de colores Neutra/Azulada (Socioemocional) */
+            --primary-color: #455a64;
+            --secondary-color: #78909c;
+            --bg-light: #eceff1;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .volver-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjetas de Contenido */
+        .content-card, .sidebar-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #37474f;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Sección del Proyecto PEC */
+        .pec-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .pec-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Alerta de Entrega */
+        .entrega-box {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .entrega-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        /* Sección del Docente */
+        .teacher-info {
+            text-align: center;
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .materia-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="volver-btn">← Volver al Menú</a>
+        <h1>Formación Socioemocional</h1>
+        <p>Grupo 606</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="content-card">
+            <h2>Propósito de la Materia</h2>
+            <p>Comprender cómo el arte y los medios visuales sirven como herramientas poderosas para manifestar opiniones, puntos de vista y realidades sociales. El objetivo es ir más allá de lo técnico, integrando una mirada ética, humana y responsable sobre el impacto que tiene la comunicación visual y multimedia en nuestro entorno.</p>
+
+            <div class="pec-box">
+                <h3>📋 Proyecto de Evaluación Continua (PEC) - Fase I</h3>
+                <p>Realizar un análisis profundo de cómo la publicidad de nuestra empresa influye en la construcción de vínculos sociales y culturales. Este análisis debe considerar los siguientes ejes:</p>
+                
+                <ul>
+                    <li><strong>Cuidado del cuerpo, la mente y los afectos:</strong> Evaluar si los mensajes transmiten bienestar, respeto y prácticas saludables.</li>
+                    <li><strong>Equidad e igualdad:</strong> Identificar si la publicidad es inclusiva, si evita estereotipos y si promueve una visión respetuosa y justa hacia todas las personas.</li>
+                    <li><strong>Influencias culturales y sociales:</strong> Reflexionar sobre cómo la publicidad puede moldear hábitos, valores, comportamientos o percepciones dentro de la comunidad.</li>
+                </ul>
+            </div>
+
+            <div class="entrega-box">
+                <h3>📌 Requisitos de Entrega del Análisis</h3>
+                <ul>
+                    <li><strong>Formato:</strong> Presentación en formato digital, con redacción clara y sustentada. De preferencia en un archivo Word exportado a <strong>PDF</strong>.</li>
+                    <li><strong>Estructura:</strong> Obligatorio incluir una hoja de presentación con los nombres completos de todos los integrantes del equipo.</li>
+                    <li><strong>Evidencia visual:</strong> El documento puede (y debe) incluir imágenes de referencia, comparaciones o fragmentos de la publicidad analizada para sostener el contenido.</li>
+                    <li><strong>Medio de envío:</strong> La entrega se realizará a través del enlace anexo proporcionado por el docente.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card teacher-info">
+                <h2>Docente</h2>
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjWlDPhRuhhZRtSMrlV9WfaU8x1kEg-6NO_JxR2ToHq0vKoCuGQ=s75-c" alt="Foto del Docente" class="teacher-img">
+                <h3 style="color: var(--text-dark); margin: 0;">Luis Angel Casso Castelan</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Imparte: Formación Socioemocional</p>
+            </div>
+
+            <div class="sidebar-card" style="margin-top: 2rem;">
+                <h2>Expresión Visual</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">El arte como manifestación de vínculos sociales e inclusión.</p>
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Arte y Sociedad" class="materia-img">
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

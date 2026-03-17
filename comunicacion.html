@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación y Sociedad</title>
+    <style>
+        :root {
+            /* Paleta de colores Naranja (Cálida/Comunicación) */
+            --primary-color: #e64a19;
+            --secondary-color: #ff8a65;
+            --bg-light: #fff3e0;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .volver-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Responsivo para celulares */
+            }
+        }
+
+        /* Tarjetas de Contenido */
+        .content-card, .sidebar-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #d84315;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Sección del Docente */
+        .teacher-info {
+            text-align: center;
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .materia-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Destacado del Proyecto */
+        .proyecto-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .proyecto-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="volver-btn">← Volver al Menú</a>
+        <h1>Comunicación y Sociedad</h1>
+        <p>Grupo 606</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="content-card">
+            <h2>Propósito de la Materia</h2>
+            <p>Comprender cómo los medios de comunicación masiva y las diferentes formas de expresión humana impactan y moldean el comportamiento social, dotando al alumno de herramientas visuales y discursivas para transmitir mensajes efectivos.</p>
+
+            <h2>Progresiones y Contenidos del Primer Parcial</h2>
+            
+            <h3>1. Los Mass Media y su Influencia</h3>
+            <p>Análisis de los medios de comunicación masiva (televisión, radio, internet, redes sociales) y cómo estos influyen en la percepción, opinión pública y toma de decisiones de la gente en la actualidad.</p>
+
+            <h3>2. La Psicología del Color</h3>
+            <p>Estudio de cómo los colores transmiten emociones y mensajes de forma inconsciente. Uso estratégico de paletas de colores para generar impacto visual y retención en la comunicación digital.</p>
+
+            <h3>3. Formas de Comunicación</h3>
+            <p>Exploración de los distintos canales y formatos (comunicación verbal, no verbal, escrita y visual) y cómo adaptarlos según la audiencia a la que nos dirigimos.</p>
+
+            <div class="proyecto-box">
+                <h3>🎯 Objetivo Práctico: Proyecto Multimedia</h3>
+                <p>Aplicar todos los conocimientos adquiridos en el parcial para <strong>crear un contenido multimedia para nuestra empresa</strong>. Este contenido deberá utilizar correctamente la teoría del color, una forma de comunicación adecuada y el formato de "mass media" para conectar exitosamente con nuestro público objetivo.</p>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card teacher-info">
+                <h2>Docente</h2>
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjWlDPhRuhhZRtSMrlV9WfaU8x1kEg-6NO_JxR2ToHq0vKoCuGQ=s75-c" alt="Foto del Docente" class="teacher-img">
+                <h3 style="color: var(--text-dark); margin: 0;">Luis Angel Casso Castelan</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Imparte: Comunicación y Sociedad</p>
+            </div>
+
+            <div class="sidebar-card" style="margin-top: 2rem;">
+                <h2>Imagen de la Materia</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Representación de la conexión global y los medios digitales.</p>
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Concepto de Comunicación" class="materia-img">
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

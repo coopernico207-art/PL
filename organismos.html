@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organismos: Estructuras y Procesos</title>
+    <style>
+        :root {
+            /* Paleta de colores Azul (Organismos) */
+            --primary-color: #0083b0;
+            --secondary-color: #00b4db;
+            --bg-light: #e0f7fa;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .volver-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .volver-btn:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjetas de Contenido */
+        .content-card, .sidebar-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #0056b3;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Sección del Proyecto PEC */
+        .pec-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .pec-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Alerta de Entrega */
+        .entrega-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .entrega-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        /* Sección del Docente */
+        .teacher-info {
+            text-align: center;
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .materia-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="volver-btn">← Volver al Menú</a>
+        <h1>Organismos: Estructuras y Procesos</h1>
+        <p>Grupo 606</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="content-card">
+            <h2>Propósito de la Materia</h2>
+            <p>Comprender las estructuras y procesos biológicos fundamentales de los seres vivos, y utilizar estos conceptos como analogías prácticas para entender el funcionamiento, la estructura y los recursos de una organización o empresa.</p>
+
+            <h2>Actividades y Contenidos Recientes</h2>
+            <ul>
+                <li><strong>Casos de mutación genética:</strong> Análisis de alteraciones en el ADN y sus consecuencias.</li>
+                <li><strong>El experimento del globo:</strong> Práctica demostrativa en clase.</li>
+                <li><strong>Creación de un ser vivo:</strong> Proyecto donde creamos un ser vivo ficticio con el objetivo de explicar la estructura de nuestra empresa mediante una analogía biológica. <span class="tag">Entrega en clase</span></li>
+                <li><strong>Guía de examen:</strong> Preparación para la evaluación del primer parcial.</li>
+            </ul>
+
+            <div class="pec-box">
+                <h3>🧬 Primera Fase PEC: El "Metabolismo" de la Empresa</h3>
+                <p>En este proyecto establecemos una analogía directa entre los procesos celulares y el funcionamiento de nuestra empresa. Reconocemos el uso del tiempo, el trabajo humano y los recursos económicos como las <strong>formas de energía</strong> empleadas en nuestro proceso productivo.</p>
+                
+                <p><strong>Entregable principal:</strong> Elaboración de un diagrama de flujo del metabolismo de la empresa que incluya:</p>
+                <ul>
+                    <li>Los insumos iniciales.</li>
+                    <li>Las etapas del proceso productivo.</li>
+                    <li>El producto o servicio final.</li>
+                    <li>La explicación de la relación entre <strong>catabolismo, anabolismo y el uso de la energía</strong> en la empresa.</li>
+                    <li>La identificación de un punto crítico dentro del proceso.</li>
+                </ul>
+            </div>
+
+            <div class="entrega-box">
+                <h3>📌 Requisitos de la Hoja de Presentación (PEC)</h3>
+                <p>Para la entrega de este proyecto, la hoja de presentación debe incluir obligatoriamente los siguientes datos:</p>
+                <ul>
+                    <li><strong>Número de equipo</strong> (Otorgado por el asesor en clase).</li>
+                    <li><strong>Nombre de la empresa.</strong></li>
+                    <li><strong>Tipo de empresa.</strong></li>
+                </ul>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card teacher-info">
+                <h2>Docente</h2>
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXYLcpqJhhYjD8rPjRb__kKktbUNbPfuav1hPieFPPxWpohpn2R=s75-c" alt="Foto del Docente" class="teacher-img">
+                <h3 style="color: var(--text-dark); margin: 0;">Nicolas Norberto Solorzano Vazquez</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Imparte: Organismos</p>
+            </div>
+
+            <div class="sidebar-card" style="margin-top: 2rem;">
+                <h2>Analogía Biológica</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">El metabolismo celular aplicado a los procesos productivos de una empresa.</p>
