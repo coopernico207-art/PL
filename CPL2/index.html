@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro COBAT - QR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cobat-guinda: #ab0033;
+            --cobat-guinda-dark: #8b002a;
+            --cobat-dorado: #bc955c;
+            --cobat-white: #ffffff;
+            --cobat-gray: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top left, var(--cobat-guinda) 0%, var(--cobat-guinda-dark) 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Abstract shapes for premium look */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cobat-dorado) 0%, transparent 80%);
+            opacity: 0.15;
+            filter: blur(80px);
+            animation: pulse 10s infinite alternate ease-in-out;
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.2) translate(50px, 50px);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--cobat-guinda);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: var(--cobat-dorado);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .logo-central-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--cobat-gray);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .logo-central-wrapper img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+
+        .logo-central-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid var(--cobat-dorado);
+            border-radius: 25px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        #qrcode {
+            margin: 0 auto;
+        }
+
+        #qrcode img {
+            margin: 0 auto;
+        }
+
+        .instruction {
+            margin-top: 25px;
+            color: #444;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .instruction strong {
+            color: var(--cobat-guinda);
+            display: block;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: var(--cobat-guinda);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(171, 0, 51, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--cobat-guinda-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(139, 0, 42, 0.4);
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="logo-container">
+                <div class="logo-text">COBAT</div>
+                <div class="logo-subtitle">Colegio de Bachilleres</div>
+            </div>
+
+            <div class="logo-central-wrapper">
+                <img src="COBAT-vertical.png" alt="Logo COBAT">
+            </div>
+
+            <div class="instruction">
+                Selecciona la opción para acceder al
+                <strong>Formulario de Registro</strong>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT63d-WyPKInoXTzoIsCklhhN2iO8nRg09heYwloMlg6q6TA/viewform"
+                class="btn" target="_blank">
+                Abrir Enlace Directo
+            </a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 COBAT 22 - Dirección Académica
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+
+
+            // Subtle animation on mouse move for the card
+            const card = document.querySelector('.card');
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            document.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+
+            document.addEventListener('mouseleave', () => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            });
+        });
+    </script>
+</body>
+
+</html>
