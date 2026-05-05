@@ -1,245 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Materias - Mural</title>
+    <title>Registro COBAT - QR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <style>
-        /* Variables globales para el estilo mural */
         :root {
-            --bg-board: #c19a6b; /* Color tipo tablero de corcho */
-            --text-main: #333333;
-            --text-muted: #555555;
-            --shadow-note: 3px 5px 15px rgba(0,0,0,0.2);
-            --shadow-hover: 5px 10px 25px rgba(0,0,0,0.3);
+            --cobat-guinda: #ab0033;
+            --cobat-guinda-dark: #8b002a;
+            --cobat-dorado: #bc955c;
+            --cobat-white: #ffffff;
+            --cobat-gray: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            /* Fondo tipo corcho/mural */
-            background-color: var(--bg-board);
-            background-image: radial-gradient(#a67c52 1px, transparent 1px);
-            background-size: 20px 20px;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif; /* Fuente un poco más casual */
-            margin: 0;
-            padding: 3rem;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
             display: flex;
+            align-items: center;
             justify-content: center;
-        }
-
-        /* Contenedor principal */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            max-width: 1100px;
-            width: 100%;
-        }
-
-        /* Diseño de la tarjeta (Nota adhesiva) */
-        .card {
-            border-radius: 2px 15px 15px 15px;
-            box-shadow: var(--shadow-note);
-            text-decoration: none;
-            color: var(--text-main);
-            display: flex;
-            flex-direction: column;
+            background: radial-gradient(circle at top left, var(--cobat-guinda) 0%, var(--cobat-guinda-dark) 100%);
+            overflow: hidden;
             position: relative;
-            padding: 2rem 1.5rem 1.5rem 1.5rem;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
         }
 
-        /* Efecto de cinta adhesiva en la parte superior */
-        .card::before {
+        /* Abstract shapes for premium look */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cobat-dorado) 0%, transparent 80%);
+            opacity: 0.15;
+            filter: blur(80px);
+            animation: pulse 10s infinite alternate ease-in-out;
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.2) translate(50px, 50px);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--cobat-guinda);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: var(--cobat-dorado);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .logo-central-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--cobat-gray);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .logo-central-wrapper img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+
+        .logo-central-wrapper::before {
             content: '';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 100px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            backdrop-filter: blur(2px);
-            z-index: 2;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid var(--cobat-dorado);
+            border-radius: 25px;
+            opacity: 0.5;
+            z-index: -1;
         }
 
-        /* Rotaciones aleatorias para dar efecto orgánico de mural */
-        .card:nth-child(1) { transform: rotate(-3deg); }
-        .card:nth-child(2) { transform: rotate(2deg); }
-        .card:nth-child(3) { transform: rotate(-1deg); }
-        .card:nth-child(4) { transform: rotate(3deg); }
-        .card:nth-child(5) { transform: rotate(-2deg); }
-        .card:nth-child(6) { transform: rotate(1deg); }
-
-        /* Efecto Hover: la nota se levanta y se endereza */
-        .card:hover {
-            transform: scale(1.05) rotate(0deg) !important;
-            box-shadow: var(--shadow-hover);
-            z-index: 10;
+        #qrcode {
+            margin: 0 auto;
         }
 
-        /* Colores de las notas (Post-its pastel) */
-        .note-1 { background-color: #ff9aa2; } /* Rosa */
-        .note-2 { background-color: #ffdac1; } /* Durazno */
-        .note-3 { background-color: #e2f0cb; } /* Verde claro */
-        .note-4 { background-color: #b5ead7; } /* Menta */
-        .note-5 { background-color: #c7ceea; } /* Lila */
-        .note-6 { background-color: #fff9a6; } /* Amarillo */
-
-        /* Textos de la tarjeta */
-        .card-header {
-            margin-bottom: 1rem;
-            padding-right: 60px; /* Espacio para la foto */
+        #qrcode img {
+            margin: 0 auto;
         }
 
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 0;
-            line-height: 1.2;
+        .instruction {
+            margin-top: 25px;
+            color: #444;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
-        .card-subtitle {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            color: var(--text-muted);
-            font-family: 'Segoe UI', sans-serif; /* Fuente más legible para el nombre */
+        .instruction strong {
+            color: var(--cobat-guinda);
+            display: block;
+            margin-top: 5px;
+            font-weight: 600;
         }
 
-        /* Avatar del docente (Estilo pin o foto pegada) */
-        .teacher-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-            border: 3px solid white;
-            background-color: #e0e0e0;
-            object-fit: cover;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            z-index: 1;
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: var(--cobat-guinda);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(171, 0, 51, 0.3);
         }
 
-        .card-body {
-            flex-grow: 1;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-bottom: 1rem;
+        .btn:hover {
+            background: var(--cobat-guinda-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(139, 0, 42, 0.4);
         }
 
-        /* Footer de la tarjeta */
-        .card-footer {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            border-top: 1px dashed rgba(0,0,0,0.1);
-            padding-top: 0.8rem;
-        }
-
-        .icon {
-            width: 22px;
-            height: 22px;
-            fill: var(--text-muted);
-            transition: fill 0.2s, transform 0.2s;
-        }
-
-        .card:hover .icon {
-            fill: #000;
-            transform: scale(1.1);
+        .footer {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
         }
     </style>
 </head>
+
 <body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
 
-    <div class="grid-container">
-        
-        <a href="comunicacion.html" class="card note-1">
-            <div class="card-header">
-                <h2 class="card-title">Comunicación y Sociedad</h2>
-                <div class="card-subtitle">606 - Luis Angel Casso Castelan</div>
+    <div class="container">
+        <div class="card">
+            <div class="logo-container">
+                <div class="logo-text">COBAT</div>
+                <div class="logo-subtitle">Colegio de Bachilleres</div>
             </div>
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjWlDPhRuhhZRtSMrlV9WfaU8x1kEg-6NO_JxR2ToHq0vKoCuGQ=s75-c" alt="Profesor" class="teacher-avatar">
-            <div class="card-body">
-                <p>Ingresa para ver el propósito, progresiones y contenidos del primer parcial.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            </div>
-        </a>
 
-        <a href="socioemocional.html" class="card note-2">
-            <div class="card-header">
-                <h2 class="card-title">Formación Socioemocional</h2>
-                <div class="card-subtitle">606 - Luis Angel Casso Castelan</div>
+            <div class="logo-central-wrapper">
+                <img src="COBAT-vertical.png" alt="Logo COBAT">
             </div>
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjWlDPhRuhhZRtSMrlV9WfaU8x1kEg-6NO_JxR2ToHq0vKoCuGQ=s75-c" alt="Profesor" class="teacher-avatar">
-            <div class="card-body">
-                <p>Ingresa para ver el propósito, progresiones y contenidos del primer parcial.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            </div>
-        </a>
 
-        <a href="organismos.html" class="card note-3">
-            <div class="card-header">
-                <h2 class="card-title">Organismos: Estructuras...</h2>
-                <div class="card-subtitle">606 - Nicolas Norberto Solorzano</div>
+            <div class="instruction">
+                Selecciona la opción para acceder al
+                <strong>Formulario de Registro</strong>
             </div>
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXYLcpqJhhYjD8rPjRb__kKktbUNbPfuav1hPieFPPxWpohpn2R=s75-c" alt="Profesor" class="teacher-avatar">
-            <div class="card-body">
-                <p>Ingresa para ver el propósito, progresiones y contenidos del primer parcial.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            </div>
-        </a>
 
-        <a href="tics.html" class="card note-4">
-            <div class="card-header">
-                <h2 class="card-title">TICS</h2>
-                <div class="card-subtitle">606 - Enrique Garcia de la Rosa</div>
-            </div>
-           <img src="https://lh3.googleusercontent.com/a-/ALV-UjXNsLLK_1Pt2wMqXro72HxnOuHrTMjHp9ZjYh7h3vW3FuJYBu6kYcYL_ZJ20sxCUPrEBBE9hJAXkXWT_JV1NqWuhAnJBeew_ccSNv8ha0H9m8MmOwvQ8F8GTVHkCvf1c3umsfcvN35PNmK_bkVnIGJ4aUcquRSMBejDzEKiznIcpel2HNXK0yF0OC_18cUAldcExRR8VBixcmkgC_jN0Bajh4mpv7bQfpEqvvMyOD4cLWkx_mCwvoPO_ZOpfMeK9uzg8yhIceEXGrQAoE05-AZCcmlb2PDhbsuyPp9cQk66p0Lg-LZ3JCyTtyjOjgJJbMNqQl1KMNG3oUqAmooFw60k2eSlunCTJzMxLUG3AivfuU1voODGF9BuvmG2PEX2R_z-_NtxgMaiH1Fjyi3P7jMMW8HbXmWoLKQ7XFviT89L9EMutGy2PQpOdZxkUYm2P9KGzGNIBipWcFvtT1xWmVuOReamIHameNjs_Kj89Ej8GUvdxqbAJmblvlvvzl3vjpPCP9r3faecnG5cep9m3rlkizEW9mCDokfRDlc19hrV2x370ySHbBw0l7A4eFNGyWhrDaSiGfcMeS--K77TF42C39bYjPo7T0CYDbDG178kaCgXwjHovxrBdOPsUBXJo618OS1p4bt6FJFQQnF4YdK7YXbXMUrgjvz2cbhJyzTaNzxBkaqm6osz9zwkPueQZi7SW5Agc_3eHSKVi59MeDzubzBlXy1S7W4gFBZ9mHkKuOKecnS3JG5McL18Exh3RYPqsvChTkP5CrnYLLobqLpBHenS7KC9Dc3hVrfda_fZ840N4hsodXLwi4sKuEMKubYbreiylP6xpr1_BzTdtPdZEQrA6DGrGSGVrmrlVeRACSB5yo0EGwEff7Oei-InXj6bs78I0czQh9EDfLa5Hi0I-6iC9ucAHBc7gIj3aM-HCkur1iWNKU63n84bCfnadKJnzdkGaIBCRwADmSWHW2Lw2-gZO1GrbtyZcTQBn6KidI7K4KW4WESDFxdbNVJaKncYR5Of3HuvDBnpmDZDi4tewlwXiFIOQw1E3vsE3KLOzim6u_ykzw=s75-c" alt="Profesora" class="teacher-avatar">
-           
-            <div class="card-body">
-                <p>Ingresa para ver el propósito, progresiones y contenidos del primer parcial.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            </div>
-        </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT63d-WyPKInoXTzoIsCklhhN2iO8nRg09heYwloMlg6q6TA/viewform"
+                class="btn" target="_blank">
+                Abrir Enlace Directo
+            </a>
+        </div>
 
-        <a href="administracion.html" class="card note-5">
-            <div class="card-header">
-                <h2 class="card-title">Fundamentos de Admín...</h2>
-                <div class="card-subtitle">606 - Lucia Sanchez Garcia</div>
-            </div>
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXM-dDLWriyj14QDWXuEF-rplRXtLw8vMrz4uTPLkO0kusEsHU=s75-c" alt="Profesora" class="teacher-avatar">
-            <div class="card-body">
-                <p>Ingresa para ver el propósito, progresiones y contenidos del primer parcial.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            </div>
-        </a>
-
-        <a href="editores.html" class="card note-6">
-            <div class="card-header">
-                <h2 class="card-title">Editores</h2>
-                <div class="card-subtitle">Equipo de Desarrollo</div>
-            </div>
-            <div class="teacher-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 24px;">📝</div>
-            <div class="card-body">
-                <p>Conoce al equipo detrás de la creación y maquetación de este sitio web.</p>
-            </div>
-            <div class="card-footer">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-            </div>
-        </a>
-
+        <div class="footer">
+            &copy; 2026 COBAT 22 - Dirección Académica
+        </div>
     </div>
 
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+
+
+            // Subtle animation on mouse move for the card
+            const card = document.querySelector('.card');
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            document.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+
+            document.addEventListener('mouseleave', () => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            });
+        });
+    </script>
 </body>
+
 </html>
